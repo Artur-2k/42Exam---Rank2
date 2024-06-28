@@ -17,10 +17,3 @@ char* ft_strpbrk(const char *s1, const char *s2)
 
 	return (NULL);
 }
-#include <stdio.h>
-
-int main()
-{
-	printf("%s\n", ft_strpbrk("ola mundo\n", "m"));
-
-}
