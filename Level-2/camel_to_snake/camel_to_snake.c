@@ -38,7 +38,7 @@ int main(int ac, char **av)
 	}
 	int len = camel_word_count(av[1]);
 
-	char *snake = (char *)malloc(sizeof(char) * (ft_strlen(av[1]) + len));
+	char *snake = (char *)malloc(sizeof(char) * (ft_strlen(av[1]) + len + 1));
 
 	int i = 0;
 	int j = 0;
@@ -51,5 +51,6 @@ int main(int ac, char **av)
 	snake[j] = 0;
 
 	ft_putstr(snake);
+	free(snake);
 	return (0);
 }
