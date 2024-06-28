@@ -6,6 +6,9 @@ int camel_word_count(const char *str)
 {
 	int count = 0;
 
+	if (*str != 0)
+		count++;
+
 	while (*str)
 	{
 		if ('A' <= *str && *str <= 'Z')
@@ -26,6 +29,7 @@ void	ft_putstr(char *str)
 {
 	while (*str)
 		write(1, str++, 1);
+	write(1, "\n", 1);
 }
 
 
@@ -38,7 +42,7 @@ int main(int ac, char **av)
 	}
 	int len = camel_word_count(av[1]);
 
-	char *snake = (char *)malloc(sizeof(char) * (ft_strlen(av[1]) + len + 1));
+	char *snake = (char *)malloc(sizeof(char) * (ft_strlen(av[1]) + len));
 
 	int i = 0;
 	int j = 0;
