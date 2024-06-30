@@ -1,10 +1,9 @@
-int miniStrchr(int c, char *str, int str_base)
+int baseSearch(int c, char *str, int str_base)
 {
+	if ('A' <= c && c <= 'F')
+		c += 32;
 	while (*str && str_base)
 	{
-
-		if ('A' <= c && c <= 'Z')
-			c += 32;
 		if (c == *str)
 			return 1;
 		str++;
@@ -34,7 +33,7 @@ int	ft_atoi_base(const char *str, int str_base)
 	if (*str == '-')
 		sign = -1;
 
-	while (*str && miniStrchr(*str, base, str_base))
+	while (*str && baseSearch(*str, base, str_base))
 	{
 		if ('0' <= *str && *str <= '9')
 			result = result * str_base + (*str - '0');
